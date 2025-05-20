@@ -15,8 +15,8 @@ MorphoConseil est une application web qui permet aux utilisateurs de découvrir 
 ### Backend
 - Node.js avec Express
 - TypeScript
-- Prisma (ORM)
-- PostgreSQL
+- Mongoose (ORM)
+- MongoDB
 - Nodemailer pour les emails
 - Bcrypt pour le hachage des mots de passe
 
@@ -29,7 +29,7 @@ MorphoConseil est une application web qui permet aux utilisateurs de découvrir 
 ## Prérequis
 
 - Node.js (v14 ou supérieur)
-- PostgreSQL
+- MongoDB
 - npm ou yarn
 
 ## Installation
@@ -42,7 +42,6 @@ cd morpho-conseil
 
 2. Installez les dépendances du serveur :
 ```bash
-cd server
 npm install
 ```
 
@@ -53,13 +52,6 @@ npm install
 ```
 
 4. Configurez les variables d'environnement :
-Créez un fichier `.env` dans le dossier `server` avec les variables suivantes :
-```env
-DATABASE_URL="postgresql://user:password@localhost:5432/morpho_db"
-JWT_SECRET="votre_secret_jwt"
-EMAIL_USER="votre_email@gmail.com"
-EMAIL_PASSWORD="votre_mot_de_passe_app"
-```
 
 5. Initialisez la base de données :
 ```bash
@@ -71,7 +63,6 @@ npx prisma migrate dev
 
 1. Démarrez le serveur :
 ```bash
-cd server
 npm run dev
 ```
 
@@ -83,27 +74,6 @@ npm start
 
 L'application sera accessible à l'adresse : `http://localhost:3000`
 
-## Structure du Projet
-
-```
-morpho-conseil/
-├── client/                 # Frontend React
-│   ├── src/
-│   │   ├── components/    # Composants React
-│   │   ├── features/      # Fonctionnalités principales
-│   │   ├── services/      # Services API
-│   │   └── types/         # Types TypeScript
-│   └── package.json
-│
-├── server/                 # Backend Node.js
-│   ├── src/
-│   │   ├── routes/        # Routes API
-│   │   ├── services/      # Services métier
-│   │   └── index.ts       # Point d'entrée
-│   └── package.json
-│
-└── README.md
-```
 
 ## API Endpoints
 
